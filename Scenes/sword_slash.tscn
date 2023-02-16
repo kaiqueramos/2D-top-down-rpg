@@ -1,0 +1,241 @@
+[gd_scene load_steps=30 format=3 uid="uid://wljqwpr25wwa"]
+
+[ext_resource type="Script" path="res://Scripts/SwordSlash.gd" id="1_nggic"]
+
+[sub_resource type="Shader" id="Shader_tsrt0"]
+code = "shader_type canvas_item;
+
+uniform sampler2D toneMapping;
+uniform sampler2D lifetimeGradient;
+
+void fragment() {
+	float particleLife = COLOR.r;
+	vec4 baseColor = texture(TEXTURE, UV);
+	baseColor.rgb = texture(toneMapping, baseColor.rr).rgb;
+	float appearenceState = particleLife * 2.0 - UV.x * 0.3;
+	
+	if (appearenceState > 0.0){
+		COLOR = texture(lifetimeGradient, vec2(appearenceState)) * baseColor;
+	} else {
+		COLOR.a = 0.0;
+	}
+}
+"
+
+[sub_resource type="Gradient" id="Gradient_k8lyo"]
+offsets = PackedFloat32Array(0, 0.0813008, 0.325203, 0.739837, 0.918699, 0.951219)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0.870572, 0.870572, 0.870572, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.592157, 0.592157, 0.592157, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rkabp"]
+gradient = SubResource("Gradient_k8lyo")
+
+[sub_resource type="Gradient" id="Gradient_lbopt"]
+offsets = PackedFloat32Array(0, 0.99187)
+colors = PackedColorArray(1, 1, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m638v"]
+gradient = SubResource("Gradient_lbopt")
+fill_from = Vector2(0.0215054, 0.806452)
+fill_to = Vector2(0.849462, 0.241935)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gon8m"]
+shader = SubResource("Shader_tsrt0")
+shader_parameter/toneMapping = SubResource("GradientTexture2D_m638v")
+shader_parameter/lifetimeGradient = SubResource("GradientTexture1D_rkabp")
+
+[sub_resource type="Gradient" id="Gradient_xbbkb"]
+interpolation_mode = 2
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4vcbe"]
+gradient = SubResource("Gradient_xbbkb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bn6yh"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 1.5
+scale_max = 1.5
+color_ramp = SubResource("GradientTexture1D_4vcbe")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_40bvt"]
+load_path = "res://.godot/imported/slash.png-2aeb16458b8c50a42cf0c7808e4aca8c.ctex"
+
+[sub_resource type="Shader" id="Shader_e7xvw"]
+code = "shader_type canvas_item;
+
+uniform sampler2D toneMapping;
+uniform sampler2D lifetimeGradient;
+
+void fragment() {
+	float particleLife = COLOR.r;
+	vec4 baseColor = texture(TEXTURE, UV);
+	baseColor.rgb = texture(toneMapping, baseColor.rr).rgb;
+	float appearenceState = particleLife * 2.0 - UV.x * 0.3;
+	
+	if (appearenceState > 0.0){
+		COLOR = texture(lifetimeGradient, vec2(appearenceState)) * baseColor;
+	} else {
+		COLOR.a = 0.0;
+	}
+}
+"
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tkbch"]
+gradient = SubResource("Gradient_k8lyo")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b0gjk"]
+gradient = SubResource("Gradient_lbopt")
+fill_from = Vector2(0.0215054, 0.806452)
+fill_to = Vector2(0.849462, 0.241935)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ftonk"]
+shader = SubResource("Shader_e7xvw")
+shader_parameter/toneMapping = SubResource("GradientTexture2D_b0gjk")
+shader_parameter/lifetimeGradient = SubResource("GradientTexture1D_tkbch")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_31ipi"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 1.5
+scale_max = 1.5
+color_ramp = SubResource("GradientTexture1D_4vcbe")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uqo80"]
+load_path = "res://.godot/imported/slash.png-2aeb16458b8c50a42cf0c7808e4aca8c.ctex"
+
+[sub_resource type="Shader" id="Shader_epxgq"]
+code = "shader_type canvas_item;
+
+uniform sampler2D toneMapping;
+uniform sampler2D lifetimeGradient;
+
+void fragment() {
+	float particleLife = COLOR.r;
+	vec4 baseColor = texture(TEXTURE, UV);
+	baseColor.rgb = texture(toneMapping, baseColor.rr).rgb;
+	float appearenceState = particleLife * 2.0 - UV.x * 0.3;
+	
+	if (appearenceState > 0.0){
+		COLOR = texture(lifetimeGradient, vec2(appearenceState)) * baseColor;
+	} else {
+		COLOR.a = 0.0;
+	}
+}
+"
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_c8u7a"]
+gradient = SubResource("Gradient_k8lyo")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_isbmh"]
+gradient = SubResource("Gradient_lbopt")
+fill_from = Vector2(0.0215054, 0.806452)
+fill_to = Vector2(0.849462, 0.241935)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4govi"]
+shader = SubResource("Shader_epxgq")
+shader_parameter/toneMapping = SubResource("GradientTexture2D_isbmh")
+shader_parameter/lifetimeGradient = SubResource("GradientTexture1D_c8u7a")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dxboa"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = 90.0
+angle_max = 90.0
+scale_min = 1.5
+scale_max = 1.5
+color_ramp = SubResource("GradientTexture1D_4vcbe")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wlci4"]
+load_path = "res://.godot/imported/slash.png-2aeb16458b8c50a42cf0c7808e4aca8c.ctex"
+
+[sub_resource type="Shader" id="Shader_ylg8q"]
+code = "shader_type canvas_item;
+
+uniform sampler2D toneMapping;
+uniform sampler2D lifetimeGradient;
+
+void fragment() {
+	float particleLife = COLOR.r;
+	vec4 baseColor = texture(TEXTURE, UV);
+	baseColor.rgb = texture(toneMapping, baseColor.rr).rgb;
+	float appearenceState = particleLife * 2.0 - UV.x * 0.3;
+	
+	if (appearenceState > 0.0){
+		COLOR = texture(lifetimeGradient, vec2(appearenceState)) * baseColor;
+	} else {
+		COLOR.a = 0.0;
+	}
+}
+"
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1csla"]
+gradient = SubResource("Gradient_k8lyo")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6b3qg"]
+gradient = SubResource("Gradient_lbopt")
+fill_from = Vector2(0.0215054, 0.806452)
+fill_to = Vector2(0.849462, 0.241935)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nutot"]
+shader = SubResource("Shader_ylg8q")
+shader_parameter/toneMapping = SubResource("GradientTexture2D_6b3qg")
+shader_parameter/lifetimeGradient = SubResource("GradientTexture1D_1csla")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bgojl"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = 270.0
+angle_max = 270.0
+scale_min = 1.5
+scale_max = 1.5
+color_ramp = SubResource("GradientTexture1D_4vcbe")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3jb0g"]
+load_path = "res://.godot/imported/slash.png-2aeb16458b8c50a42cf0c7808e4aca8c.ctex"
+
+[node name="SwordSlash" type="Node2D"]
+script = ExtResource("1_nggic")
+
+[node name="ParticleRight" type="GPUParticles2D" parent="."]
+material = SubResource("ShaderMaterial_gon8m")
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_bn6yh")
+texture = SubResource("CompressedTexture2D_40bvt")
+lifetime = 0.5
+one_shot = true
+
+[node name="ParticleLeft" type="GPUParticles2D" parent="."]
+material = SubResource("ShaderMaterial_ftonk")
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_31ipi")
+texture = SubResource("CompressedTexture2D_uqo80")
+lifetime = 0.5
+one_shot = true
+
+[node name="ParticleUp" type="GPUParticles2D" parent="."]
+material = SubResource("ShaderMaterial_4govi")
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_dxboa")
+texture = SubResource("CompressedTexture2D_wlci4")
+lifetime = 0.5
+one_shot = true
+
+[node name="ParticleDown" type="GPUParticles2D" parent="."]
+material = SubResource("ShaderMaterial_nutot")
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_bgojl")
+texture = SubResource("CompressedTexture2D_3jb0g")
+lifetime = 0.5
+one_shot = true

@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlhy8kkmicfy6"]
+
+[ext_resource type="Shader" path="res://Shaders/test.gdshader" id="1_c2xgh"]
+[ext_resource type="Texture2D" uid="uid://lsvfnbmvh4ge" path="res://icon.svg" id="1_hbdlj"]
+[ext_resource type="Script" path="res://Scripts/DashGhost.gd" id="2_goj2m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xlxy2"]
+shader = ExtResource("1_c2xgh")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 1.0
+
+[node name="DashGhost" type="Sprite2D"]
+z_index = -1
+material = SubResource("ShaderMaterial_xlxy2")
+position = Vector2(334, 250)
+texture = ExtResource("1_hbdlj")
+script = ExtResource("2_goj2m")
