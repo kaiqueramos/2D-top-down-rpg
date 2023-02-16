@@ -6,9 +6,33 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="GUI" parent="." instance=ExtResource("1_pvang")]
-
 [node name="Enemy" parent="." instance=ExtResource("2_skhq0")]
-position = Vector2(889, 323)
+position = Vector2(1407, 180)
+
+[node name="Enemy2" parent="." instance=ExtResource("2_skhq0")]
+position = Vector2(1105, 563)
+
+[node name="Enemy3" parent="." instance=ExtResource("2_skhq0")]
+position = Vector2(-40.9998, 691)
 
 [node name="Player" parent="." instance=ExtResource("1_8pd2o")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = -200
+limit_top = -200
+limit_right = 1500
+limit_bottom = 800
+editor_draw_limits = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("1_pvang")]
+show_behind_parent = true
+layout_direction = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="life_damage" from="Player" to="CanvasLayer/GUI" method="_on_player_life_damage"]

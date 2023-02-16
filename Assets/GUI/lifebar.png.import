@@ -3,23 +3,24 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6tcu0s3til1x"
-path="res://.godot/imported/lifebar.png-02c55ce37859c8c95855410224f4f31e.ctex"
+path.bptc="res://.godot/imported/lifebar.png-02c55ce37859c8c95855410224f4f31e.bptc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/GUI/lifebar.png"
-dest_files=["res://.godot/imported/lifebar.png-02c55ce37859c8c95855410224f4f31e.ctex"]
+dest_files=["res://.godot/imported/lifebar.png-02c55ce37859c8c95855410224f4f31e.bptc.ctex"]
 
 [params]
 
-compress/mode=0
-compress/high_quality=false
+compress/mode=2
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1

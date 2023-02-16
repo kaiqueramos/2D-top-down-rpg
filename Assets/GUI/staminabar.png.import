@@ -3,23 +3,24 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c275tuubyuc5i"
-path="res://.godot/imported/staminabar.png-96522bb09ce51dbf66ad7096a195cfad.ctex"
+path.bptc="res://.godot/imported/staminabar.png-96522bb09ce51dbf66ad7096a195cfad.bptc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/GUI/staminabar.png"
-dest_files=["res://.godot/imported/staminabar.png-96522bb09ce51dbf66ad7096a195cfad.ctex"]
+dest_files=["res://.godot/imported/staminabar.png-96522bb09ce51dbf66ad7096a195cfad.bptc.ctex"]
 
 [params]
 
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
+compress/mode=2
+compress/high_quality=true
+compress/lossy_quality=1.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1

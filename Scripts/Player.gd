@@ -1,9 +1,11 @@
 extends Node2D
 
+signal life_damage(amount)
+
 @export var move_speed = 200.0
-@export var life = 5
 @export var damage = 1
 @export var dash_force = 1000.0
+
 var player_dead = false
 var motion = Vector2()
 var can_attack = true
@@ -123,9 +125,9 @@ func attack():
 	
 func take_damage(min, max, mob : CharacterBody2D):
 	var damage = randi_range(min, max)
-	life -= damage
+	emit_signal("life_damage", damage)
 	
-	if life > 0:
+	if damage > 0:
 		var player_motion = position.direction_to(mob.position) * 2000 * get_physics_process_delta_time()
 		position -= player_motion
 		
